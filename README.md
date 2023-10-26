@@ -1,5 +1,11 @@
+An Overview of Non-Intrusive Load Monitoring: 
+Approaches, Business Applications, and Challenges
+Mengmeng Zhuang, Mohammad Shahidehpour, Fellow, IEEE and Zuyi Li, Senior Member, IEEE
+--> 
 
-These are the process
+
+A. General Framework of NILM  
+ 
  1 Data 
 Acquisition&
 Preprocessing 
@@ -10,11 +16,6 @@ Extraction
  4 Load 
 Identification
 
-# NILM
- main
 
-hello
-
-hello world
-hiiiiiiiiiiiiii main
- main
+Identification of Load Signatures : 
+window of margin and shifted sample methods 
