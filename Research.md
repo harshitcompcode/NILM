@@ -17,3 +17,13 @@ Once the deep learning model is trained, it can be used to predict the power con
 The LSTM RNN used in the paper is trained on a dataset of wavelet signatures and the corresponding power consumption measurements. This allows the model to learn the relationship between the wavelet signatures and the power consumption measurements.
 
 Once the LSTM RNN is trained, it can be used to predict the power consumption of individual appliances from their wavelet signatures. To do this, the model simply takes the wavelet signature of an appliance as input and outputs the predicted power consumption.
+
+Here is an example of how wavelet signatures and deep learning can be used to predict the power consumption of an individual appliance:
+
+A homeowner has a smart meter that measures the voltage and current consumption of their home.
+>The smart meter sends the voltage and current measurements to a cloud-based NILM system.
+>The NILM system uses a wavelet transform to extract the wavelet signatures from the voltage and current measurements.
+>The NILM system feeds the wavelet signatures into a deep learning model that has been trained on a dataset of wavelet signatures and the corresponding power consumption measurements.
+>The deep learning model predicts the power consumption of the individual appliance based on its wavelet signature.
+>The NILM system sends the predicted power consumption measurement to the homeowner's smartphone.
+>The homeowner can use the predicted power consumption measurement to identify and reduce energy waste.
