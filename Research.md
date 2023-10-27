@@ -13,3 +13,7 @@ Wavelet signatures are extracted from the voltage and current measurements by ap
 The wavelet signatures are then fed into the deep learning model. The deep learning model is trained on a dataset of wavelet signatures and the corresponding power consumption measurements. This allows the model to learn the relationship between the wavelet signatures and the power consumption measurements.
 
 Once the deep learning model is trained, it can be used to predict the power consumption of individual appliances from their wavelet signatures. To do this, the model simply takes the wavelet signature of an appliance as input and outputs the predicted power consumption.
+
+The LSTM RNN used in the paper is trained on a dataset of wavelet signatures and the corresponding power consumption measurements. This allows the model to learn the relationship between the wavelet signatures and the power consumption measurements.
+
+Once the LSTM RNN is trained, it can be used to predict the power consumption of individual appliances from their wavelet signatures. To do this, the model simply takes the wavelet signature of an appliance as input and outputs the predicted power consumption.
