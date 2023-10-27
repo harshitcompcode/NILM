@@ -39,3 +39,59 @@ Examples in NILM:
 
 Window of margin loss functions: The "window with margin" method proposed by Azzini et al.
 Shifted sample augmentation: The "shifted time series" method proposed by He et al.
+
+
+# Import necessary libraries
+import numpy as np
+import pandas as pd
+
+# Load meter data
+meter_data = pd.read_csv("meter_data.csv")
+
+# Split meter data into training and testing sets
+train_data = meter_data[:int(len(meter_data) * 0.8)]
+test_data = meter_data[int(len(meter_data) * 0.8):]
+
+# Define window of margin loss function
+def window_margin_loss(y_true, y_pred, margin):
+  """Calculates the window of margin loss between the true and predicted labels.
+
+  Args:
+    y_true: The true labels.
+    y_pred: The predicted labels.
+    margin: The margin.
+
+  Returns:
+    The window of margin loss.
+  """
+
+  loss = np.sum(np.maximum(0, np.abs(y_true - y_pred) - margin))
+  return loss
+
+# Define shifted sample augmentation function
+def shifted_sample_augmentation(data, shift_range):
+  """Augments the data by shifting the samples by a random amount within the specified range.
+
+  Args:
+    data: The data to be augmented.
+    shift_range: The range of shifts.
+
+  Returns:
+    The augmented data.
+  """
+
+  augmented_data = []
+  for sample in data:
+    shift = np.random.randint(-shift_range, shift_range + 1)
+    shifted_sample = np.roll(sample, shift)
+    augmented_data.append(shifted_sample)
+  return augmented_data
+
+# Train a NILM model using window of margin loss and shifted sample augmentation
+model = train_model(train_data, window_margin_loss, shifted_sample_augmentation)
+
+# Evaluate the model on the test set
+test_loss = evaluate_model(model, test_data, window_margin_loss)
+
+# Print the test loss
+print("Test loss:", test_loss)
